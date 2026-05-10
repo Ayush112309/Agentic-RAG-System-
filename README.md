@@ -28,69 +28,111 @@ If an answer cannot be found in the documents, the system explicitly says:
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-### Core Features
-- ✅ Multi-format document ingestion (PDF, TXT, CSV)
-- ✅ Recursive character text chunking with configurable size and overlap
-- ✅ OpenAI Embeddings + local sentence-transformers fallback
-- ✅ ChromaDB persistent vector storage
-- ✅ Semantic retrieval with relevance scoring
-- ✅ Strict hallucination prevention via context-grounding
-- ✅ Source attribution on every answer
-- ✅ Graceful "I don't know" responses when context is unavailable
+### 🔍 Retrieval-Augmented Generation (RAG)
+- Semantic similarity retrieval using ChromaDB vector search
+- Context-grounded responses with hallucination prevention
+- Persistent vector storage for scalable document querying
+- Relevance scoring and transparent retrieval inspection
 
-### Bonus / Agentic Features
-- ✅ LangChain OpenAI Functions agent with explicit tool calling
-- ✅ Conversation memory (windowed buffer)
-- ✅ Calculator tool for mathematical queries
-- ✅ Web search placeholder (ready for SerpAPI/Tavily integration)
-- ✅ Beautiful Streamlit web UI
-- ✅ CLI interface for terminal use
-- ✅ Modular, OOP, PEP8 codebase with full type hints
-- ✅ Comprehensive test suite (pytest)
-- ✅ Full logging to file and console
+### 📄 Intelligent Document Processing
+- Multi-format ingestion: PDF, TXT, CSV
+- Recursive chunking with configurable overlap
+- Automatic metadata tracking and source attribution
+- Persistent ingestion pipeline with deduplication support
+
+### 🤖 Agentic AI Capabilities
+- LangChain-based agent orchestration
+- Explicit tool calling architecture
+- Conversational memory with context retention
+- Calculator tool integration for mathematical reasoning
+
+### 🧠 Flexible LLM & Embedding Stack
+- GPT-4o-mini support via OpenAI
+- Local Llama3 inference through Ollama
+- OpenAI embeddings + sentence-transformers fallback
+- Fully local/offline-capable inference pipeline
+
+### 💻 Interactive User Experience
+- Modern Streamlit conversational UI
+- Retrieved chunk transparency and source inspection
+- Relevance score visualization
+- Real-time grounded response generation
+
+### ⚙️ Engineering & Infrastructure
+- Modular production-style architecture
+- ChromaDB persistent vector database
+- Structured logging and configuration management
+- CLI + Web UI support
+- Comprehensive pytest-based testing suite
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ System Architecture
 
+```text
+                    ┌──────────────────────────┐
+                    │      User Query          │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │     RAG Retriever        │
+                    │ Semantic Similarity      │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │       ChromaDB           │
+                    │ Persistent Vector Store  │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │ Retrieved Context Chunks │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │      RAG Agent           │
+                    │  Grounded Prompting      │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │   LLM (GPT-4o / Llama3) │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │   Grounded Response      │
+                    │  + Source Attribution    │
+                    └──────────────────────────┘
+````
+
+### End-to-End Pipeline
+
+```text
+Document Upload
+      ↓
+Document Loader
+      ↓
+Text Chunking
+      ↓
+Embedding Generation
+      ↓
+ChromaDB Vector Storage
+      ↓
+Semantic Retrieval
+      ↓
+Grounded Prompt Construction
+      ↓
+LLM Generation
+      ↓
+Source-Cited Response
 ```
-┌────────────────────────────────────────────────────────────────┐
-│                    AGENTIC RAG SYSTEM                          │
-│                                                                │
-│  ┌──────────────┐    ┌─────────────┐    ┌──────────────────┐  │
-│  │  Document    │    │   Text      │    │   Embedding      │  │
-│  │  Loader      │───▶│   Chunker   │───▶│   Manager        │  │
-│  │  (PDF/TXT/   │    │  (Recursive │    │  (OpenAI /       │  │
-│  │   CSV)       │    │   Split)    │    │   SentTrans)     │  │
-│  └──────────────┘    └─────────────┘    └────────┬─────────┘  │
-│                                                  │            │
-│                                         ┌────────▼─────────┐  │
-│                                         │   VectorStore    │  │
-│                                         │   (ChromaDB)     │  │
-│                                         │   Persistent     │  │
-│                                         └────────┬─────────┘  │
-│                                                  │            │
-│  ┌──────────────┐    ┌─────────────┐    ┌────────▼─────────┐  │
-│  │  Memory      │    │    RAG      │    │   RAG Retriever  │  │
-│  │  Manager     │◀──▶│   Agent     │◀───│   (Similarity    │  │
-│  │  (Buffer     │    │  (LangChain │    │    Search +      │  │
-│  │   Window)    │    │   OpenAI    │    │    Scoring)      │  │
-│  └──────────────┘    │   Functions)│    └──────────────────┘  │
-│                      └──────┬──────┘                          │
-│                             │ Tools                           │
-│              ┌──────────────┼──────────────────┐             │
-│              ▼              ▼                  ▼             │
-│     ┌────────────┐  ┌─────────────┐  ┌───────────────┐      │
-│     │ Document   │  │ Calculator  │  │ Web Search    │      │
-│     │ Retrieval  │  │ Tool        │  │ (Placeholder) │      │
-│     └────────────┘  └─────────────┘  └───────────────┘      │
-│                                                                │
-│  ┌─────────────────────────────────────────────────────────┐  │
-│  │              Streamlit UI / CLI                          │  │
-│  └─────────────────────────────────────────────────────────┘  │
-└────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### Data Flow
