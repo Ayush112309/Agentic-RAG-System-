@@ -1,0 +1,171 @@
+INTRODUCTION TO RETRIEVAL-AUGMENTED GENERATION (RAG)
+=====================================================
+
+WHAT IS RAG?
+------------
+Retrieval-Augmented Generation (RAG) is an AI architecture pattern that enhances Large Language Model (LLM) outputs by providing relevant, factual context retrieved from an external knowledge base at query time.
+
+Unlike traditional LLMs that rely solely on knowledge encoded during training, RAG systems dynamically fetch relevant documents and inject them into the LLM's prompt. This allows the model to generate answers grounded in real, up-to-date information rather than potentially outdated training data.
+
+RAG was introduced by Lewis et al. in the 2020 paper "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" published by Facebook AI Research.
+
+
+HOW RAG WORKS — STEP BY STEP
+------------------------------
+
+Phase 1: Indexing (Done Once)
+  1. Collect documents from various sources (PDFs, websites, databases)
+  2. Split documents into smaller chunks (typically 256–1024 tokens)
+  3. Convert each chunk into a dense vector embedding using an embedding model
+  4. Store embeddings in a vector database (FAISS, ChromaDB, Pinecone, Weaviate)
+
+Phase 2: Retrieval (At Query Time)
+  1. Convert the user's query into an embedding using the same model
+  2. Perform a similarity search (cosine similarity or dot product) in the vector database
+  3. Retrieve the top-k most similar document chunks
+  4. Optionally re-rank the retrieved chunks for higher precision
+
+Phase 3: Generation
+  1. Inject the retrieved chunks as context into the LLM prompt
+  2. Instruct the LLM to answer based only on the provided context
+  3. LLM generates an answer grounded in the retrieved documents
+  4. Return the answer along with source citations
+
+
+BENEFITS OF RAG
+---------------
+1. Reduced Hallucinations: LLM answers are grounded in retrieved facts
+2. Up-to-date Knowledge: No need to retrain when information changes
+3. Source Attribution: Every answer can cite the document it came from
+4. Cost-Effective: Cheaper than fine-tuning for knowledge injection
+5. Scalable: Works with millions of documents via efficient vector search
+6. Customizable: Organizations can use their own private data
+
+
+EMBEDDING MODELS
+----------------
+Embedding models convert text into high-dimensional vectors that capture semantic meaning.
+
+Popular choices:
+- OpenAI text-embedding-3-small: 1536 dimensions, fast, high quality (API-based)
+- OpenAI text-embedding-3-large: 3072 dimensions, highest quality (API-based)
+- sentence-transformers/all-MiniLM-L6-v2: 384 dimensions, free, runs locally
+- BAAI/bge-large-en-v1.5: 1024 dimensions, top open-source performance
+
+Cosine similarity measures how close two embeddings are in vector space.
+A score of 1.0 means identical; 0.0 means completely unrelated.
+
+
+VECTOR DATABASES
+----------------
+Vector databases are specialized storage systems optimized for similarity search.
+
+Comparison of popular options:
+
+ChromaDB:
+  - Open-source, embeds directly in Python
+  - Best for: local development, prototypes, small-medium datasets
+  - Persistence: local files or client-server mode
+  - Max scale: tens of millions of vectors
+
+FAISS (Facebook AI Similarity Search):
+  - Library (not a database), very fast, no server needed
+  - Best for: high-performance batch search, research
+  - Requires manual persistence implementation
+
+Pinecone:
+  - Fully managed cloud service
+  - Best for: production at scale, no ops overhead
+  - Pricing: based on vector count and queries
+
+Weaviate:
+  - Open-source with cloud option
+  - Built-in keyword + vector hybrid search
+  - GraphQL API
+
+Qdrant:
+  - High-performance, Rust-based
+  - Rich filtering capabilities
+  - Self-hosted or cloud
+
+
+CHUNKING STRATEGIES
+-------------------
+Chunking strategy significantly impacts RAG quality.
+
+Fixed-size chunking:
+  - Split by character count (e.g., 512 characters)
+  - Simple but may split sentences mid-way
+  - Best for: uniform document types
+
+Recursive character splitter:
+  - Splits on paragraphs → sentences → words → characters
+  - Preserves natural language boundaries
+  - Best for: mixed document types (recommended default)
+
+Semantic chunking:
+  - Groups sentences by semantic similarity
+  - Best for: highly varied content
+  - Slower and more complex
+
+Sentence-window chunking:
+  - Index individual sentences, retrieve surrounding context
+  - Great for precise retrieval with rich context
+
+Overlap:
+  - Add 10–20% overlap between chunks
+  - Prevents context loss at chunk boundaries
+  - Critical for multi-sentence answers
+
+
+HALLUCINATION PREVENTION
+------------------------
+RAG systems can still hallucinate. Best practices to minimize this:
+
+1. Strict system prompts: Explicitly instruct LLM to ONLY use provided context
+2. Score thresholding: Reject retrieved chunks below minimum similarity score
+3. Explicit fallback: Return "I don't know" when no relevant context found
+4. Temperature control: Use low temperature (0.0–0.2) for factual responses
+5. Source citations: Force the model to cite which document each fact comes from
+6. Hallucination detection: Use a second LLM call to verify the answer against context
+7. Human-in-the-loop: Flag low-confidence answers for human review
+
+
+ADVANCED RAG TECHNIQUES
+------------------------
+1. HyDE (Hypothetical Document Embeddings): Generate a hypothetical answer first, then use its embedding to retrieve better documents
+
+2. Multi-query retrieval: Generate multiple versions of the query, retrieve for each, merge results
+
+3. Re-ranking: After initial retrieval, use a cross-encoder model to re-rank results by relevance
+
+4. Self-querying retrieval: Let the LLM generate structured filters from the query (e.g., "filter by date > 2023")
+
+5. Graph RAG: Use a knowledge graph instead of vector search for structured relationship queries
+
+6. Agentic RAG: Let an agent decide WHEN to retrieve, WHAT to retrieve, and HOW to combine results
+
+
+EVALUATION METRICS
+------------------
+Key metrics for evaluating RAG quality:
+
+- Faithfulness: Is the answer supported by the retrieved context?
+- Answer Relevance: Does the answer address the question asked?
+- Context Recall: Did retrieval fetch all necessary information?
+- Context Precision: Are the retrieved chunks actually relevant?
+
+Tools for evaluation: RAGAS, TruLens, LangSmith, Arize
+
+
+PRODUCTION CONSIDERATIONS
+--------------------------
+When deploying a RAG system in production:
+
+1. Monitoring: Track query latency, retrieval scores, answer quality
+2. Caching: Cache embeddings and frequent query results
+3. Security: Ensure no sensitive documents are returned to unauthorized users
+4. Versioning: Version your embeddings and document index
+5. Incremental updates: Support adding new documents without re-indexing all
+6. A/B testing: Compare different chunking and retrieval strategies
+7. Feedback loops: Collect user thumbs-up/down to improve the system

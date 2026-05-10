@@ -1,0 +1,686 @@
+2026-05-10 15:24:46 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 15:24:46 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 15:24:46 | INFO     | app.utils.config               | No .env file found; relying on environment variables.
+2026-05-10 15:24:46 | WARNING  | app.utils.config               | OPENAI_API_KEY is not set but embedding_backend='openai'. Will fall back to sentence-transformers.
+2026-05-10 15:24:46 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 15:24:46 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 15:24:46 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 15:24:46 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 15:24:46 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 15:24:46 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 15:24:46 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 15:24:46 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 15:24:46 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 15:24:46 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 15:24:46 | WARNING  | app.embeddings.embedding_manager | OPENAI_API_KEY not set. Falling back to sentence-transformers.
+2026-05-10 15:24:59 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 15:25:06 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 15:25:08 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:25:08 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:25:08 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 0 existing embeddings.
+2026-05-10 15:28:07 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 15:28:07 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 15:28:08 | INFO     | app.utils.config               | No .env file found; relying on environment variables.
+2026-05-10 15:28:08 | WARNING  | app.utils.config               | OPENAI_API_KEY is not set but embedding_backend='openai'. Will fall back to sentence-transformers.
+2026-05-10 15:28:08 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 15:28:08 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 15:28:08 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 15:28:08 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 15:28:08 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 15:28:08 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 15:28:08 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 15:28:08 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 15:28:08 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 15:28:08 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 15:28:08 | INFO     | app.utils.pipeline             | Ingesting directory: data
+2026-05-10 15:28:08 | INFO     | app.ingestion.document_loader  | Loading file: data\product_pricing.csv (type: .csv)
+2026-05-10 15:28:08 | INFO     | app.ingestion.document_loader  | Successfully loaded 11 document chunks from product_pricing.csv
+2026-05-10 15:28:08 | INFO     | app.ingestion.document_loader  | Directory load complete. Total documents loaded: 11 from 1 files.
+2026-05-10 15:28:08 | INFO     | app.ingestion.chunker          | Splitting 11 documents into chunks...
+2026-05-10 15:28:08 | INFO     | app.ingestion.chunker          | Chunking complete: 11 docs → 11 chunks
+2026-05-10 15:28:08 | INFO     | app.retrieval.vector_store     | Adding 11 chunks to ChromaDB...
+2026-05-10 15:28:08 | WARNING  | app.embeddings.embedding_manager | OPENAI_API_KEY not set. Falling back to sentence-transformers.
+2026-05-10 15:28:13 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 15:28:18 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 15:28:19 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:28:19 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:28:19 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 0 existing embeddings.
+2026-05-10 15:28:19 | INFO     | app.retrieval.vector_store     | Documents added. Total embeddings in store: 11
+2026-05-10 15:28:19 | INFO     | app.utils.pipeline             | Directory ingestion complete: {'files': 1, 'chunks': 11, 'stored': 11}
+2026-05-10 15:28:25 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 15:28:25 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 15:28:25 | INFO     | app.utils.config               | No .env file found; relying on environment variables.
+2026-05-10 15:28:25 | WARNING  | app.utils.config               | OPENAI_API_KEY is not set but embedding_backend='openai'. Will fall back to sentence-transformers.
+2026-05-10 15:28:25 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 15:28:25 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 15:28:25 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 15:28:25 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 15:28:25 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 15:28:25 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 15:28:25 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 15:28:25 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 15:28:25 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 15:28:25 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 15:28:25 | INFO     | app.agents.rag_agent           | Processing query: 'What is RAG?'
+2026-05-10 15:28:25 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is RAG?'
+2026-05-10 15:28:25 | WARNING  | app.embeddings.embedding_manager | OPENAI_API_KEY not set. Falling back to sentence-transformers.
+2026-05-10 15:28:31 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 15:28:36 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 15:28:37 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:28:37 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:28:37 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 11 existing embeddings.
+2026-05-10 15:28:37 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:28:37 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is RAG?...' → 0 results (threshold=0.3)
+2026-05-10 15:28:37 | INFO     | app.retrieval.retriever        | No results above threshold. Returning empty RetrievalResult.
+2026-05-10 15:30:03 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 15:30:03 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 15:30:03 | INFO     | app.utils.config               | No .env file found; relying on environment variables.
+2026-05-10 15:30:03 | WARNING  | app.utils.config               | OPENAI_API_KEY is not set but embedding_backend='openai'. Will fall back to sentence-transformers.
+2026-05-10 15:30:03 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 15:30:03 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 15:30:03 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 15:30:03 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 15:30:03 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 15:30:03 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 15:30:03 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 15:30:03 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 15:30:03 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 15:30:03 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 15:30:03 | INFO     | app.utils.pipeline             | Ingesting directory: data
+2026-05-10 15:30:03 | INFO     | app.ingestion.document_loader  | Loading file: data\company_kb.pdf (type: .pdf)
+2026-05-10 15:30:03 | INFO     | app.ingestion.document_loader  | Successfully loaded 3 document chunks from company_kb.pdf
+2026-05-10 15:30:03 | INFO     | app.ingestion.document_loader  | Loading file: data\product_pricing.csv (type: .csv)
+2026-05-10 15:30:03 | INFO     | app.ingestion.document_loader  | Successfully loaded 11 document chunks from product_pricing.csv
+2026-05-10 15:30:03 | INFO     | app.ingestion.document_loader  | Loading file: data\rag_guide.txt (type: .txt)
+2026-05-10 15:30:03 | INFO     | app.ingestion.document_loader  | Successfully loaded 1 document chunks from rag_guide.txt
+2026-05-10 15:30:03 | INFO     | app.ingestion.document_loader  | Directory load complete. Total documents loaded: 15 from 3 files.
+2026-05-10 15:30:03 | INFO     | app.ingestion.chunker          | Splitting 15 documents into chunks...
+2026-05-10 15:30:03 | INFO     | app.ingestion.chunker          | Chunking complete: 15 docs → 29 chunks
+2026-05-10 15:30:03 | INFO     | app.retrieval.vector_store     | Adding 29 chunks to ChromaDB...
+2026-05-10 15:30:03 | WARNING  | app.embeddings.embedding_manager | OPENAI_API_KEY not set. Falling back to sentence-transformers.
+2026-05-10 15:30:09 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 15:30:13 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 15:30:15 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:30:15 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:30:15 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 11 existing embeddings.
+2026-05-10 15:30:16 | INFO     | app.retrieval.vector_store     | Documents added. Total embeddings in store: 40
+2026-05-10 15:30:16 | INFO     | app.utils.pipeline             | Directory ingestion complete: {'files': 3, 'chunks': 29, 'stored': 29}
+2026-05-10 15:30:21 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 15:30:21 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 15:30:21 | INFO     | app.utils.config               | No .env file found; relying on environment variables.
+2026-05-10 15:30:21 | WARNING  | app.utils.config               | OPENAI_API_KEY is not set but embedding_backend='openai'. Will fall back to sentence-transformers.
+2026-05-10 15:30:21 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 15:30:21 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 15:30:21 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 15:30:21 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 15:30:21 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 15:30:21 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 15:30:21 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 15:30:21 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 15:30:21 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 15:30:21 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 15:30:21 | INFO     | app.agents.rag_agent           | Processing query: 'What is RAG?'
+2026-05-10 15:30:21 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is RAG?'
+2026-05-10 15:30:21 | WARNING  | app.embeddings.embedding_manager | OPENAI_API_KEY not set. Falling back to sentence-transformers.
+2026-05-10 15:30:27 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 15:30:31 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 15:30:33 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:30:33 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:30:33 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 40 existing embeddings.
+2026-05-10 15:30:33 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:30:33 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is RAG?...' → 1 results (threshold=0.3)
+2026-05-10 15:30:33 | INFO     | app.retrieval.retriever        | Retrieved 1 chunks. Top score: 0.363. Sources: ['rag_guide.txt']
+2026-05-10 15:30:33 | WARNING  | app.agents.rag_agent           | No OPENAI_API_KEY — attempting local Ollama LLM fallback.
+2026-05-10 15:30:34 | INFO     | app.agents.rag_agent           | Ollama LLM (llama3) initialized as fallback.
+2026-05-10 15:30:38 | ERROR    | app.agents.rag_agent           | LLM invocation failed: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-05-10 15:34:08 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 15:34:08 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 15:34:08 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 15:34:08 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 15:34:08 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 15:34:08 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 15:34:08 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 15:34:08 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 15:34:08 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 15:34:08 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 15:34:08 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 15:34:08 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 15:34:08 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 15:34:08 | INFO     | app.utils.pipeline             | Ingesting directory: data
+2026-05-10 15:34:08 | INFO     | app.ingestion.document_loader  | Loading file: data\company_kb.pdf (type: .pdf)
+2026-05-10 15:34:08 | INFO     | app.ingestion.document_loader  | Successfully loaded 3 document chunks from company_kb.pdf
+2026-05-10 15:34:08 | INFO     | app.ingestion.document_loader  | Loading file: data\product_pricing.csv (type: .csv)
+2026-05-10 15:34:08 | INFO     | app.ingestion.document_loader  | Successfully loaded 11 document chunks from product_pricing.csv
+2026-05-10 15:34:08 | INFO     | app.ingestion.document_loader  | Loading file: data\rag_guide.txt (type: .txt)
+2026-05-10 15:34:08 | INFO     | app.ingestion.document_loader  | Successfully loaded 1 document chunks from rag_guide.txt
+2026-05-10 15:34:08 | INFO     | app.ingestion.document_loader  | Directory load complete. Total documents loaded: 15 from 3 files.
+2026-05-10 15:34:08 | INFO     | app.ingestion.chunker          | Splitting 15 documents into chunks...
+2026-05-10 15:34:08 | INFO     | app.ingestion.chunker          | Chunking complete: 15 docs → 29 chunks
+2026-05-10 15:34:08 | INFO     | app.retrieval.vector_store     | Adding 29 chunks to ChromaDB...
+2026-05-10 15:34:09 | INFO     | app.embeddings.embedding_manager | OpenAI embeddings initialized with model 'text-embedding-3-small'
+2026-05-10 15:34:10 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:34:10 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:34:10 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 40 existing embeddings.
+2026-05-10 15:34:22 | INFO     | openai._base_client            | Retrying request to /embeddings in 0.968814 seconds
+2026-05-10 15:34:24 | INFO     | openai._base_client            | Retrying request to /embeddings in 1.669770 seconds
+2026-05-10 15:34:26 | ERROR    | app.retrieval.vector_store     | Error adding documents to vector store: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-05-10 15:34:26 | ERROR    | __main__                       | Ingestion error: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-05-10 15:34:31 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 15:34:31 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 15:34:31 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 15:34:31 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 15:34:31 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 15:34:31 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 15:34:31 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 15:34:31 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 15:34:31 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 15:34:31 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 15:34:31 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 15:34:31 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 15:34:31 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 15:34:31 | INFO     | app.agents.rag_agent           | Processing query: 'What is RAG?'
+2026-05-10 15:34:31 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is RAG?'
+2026-05-10 15:34:32 | INFO     | app.embeddings.embedding_manager | OpenAI embeddings initialized with model 'text-embedding-3-small'
+2026-05-10 15:34:34 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:34:34 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 15:34:34 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 40 existing embeddings.
+2026-05-10 15:34:39 | INFO     | openai._base_client            | Retrying request to /embeddings in 0.762902 seconds
+2026-05-10 15:34:41 | INFO     | openai._base_client            | Retrying request to /embeddings in 1.588387 seconds
+2026-05-10 15:34:44 | ERROR    | app.retrieval.vector_store     | Similarity search failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-05-10 15:34:44 | ERROR    | __main__                       | Query error: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-05-10 17:09:25 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:09:25 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:09:25 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:09:25 | WARNING  | app.utils.config               | OPENAI_API_KEY is not set but embedding_backend='openai'. Will fall back to sentence-transformers.
+2026-05-10 17:09:25 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:09:25 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:09:25 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:09:25 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:09:25 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 17:09:25 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:09:25 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:09:25 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:09:25 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:09:25 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:10:27 | WARNING  | app.embeddings.embedding_manager | OPENAI_API_KEY not set. Falling back to sentence-transformers.
+2026-05-10 17:10:59 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:11:05 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:11:06 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:11:06 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:11:06 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 40 existing embeddings.
+2026-05-10 17:11:06 | INFO     | app.retrieval.vector_store     | Collection 'rag_documents' has been reset.
+2026-05-10 17:11:06 | INFO     | app.memory.memory_manager      | Conversation memory cleared.
+2026-05-10 17:11:06 | INFO     | app.utils.pipeline             | Full pipeline reset complete.
+2026-05-10 17:11:12 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:11:12 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:11:12 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:11:12 | WARNING  | app.utils.config               | OPENAI_API_KEY is not set but embedding_backend='openai'. Will fall back to sentence-transformers.
+2026-05-10 17:11:12 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:11:12 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:11:12 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:11:12 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:11:12 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 17:11:12 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:11:12 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:11:12 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:11:12 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:11:12 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:11:12 | INFO     | app.utils.pipeline             | Ingesting directory: data
+2026-05-10 17:11:12 | INFO     | app.ingestion.document_loader  | Loading file: data\company_kb.pdf (type: .pdf)
+2026-05-10 17:11:12 | INFO     | app.ingestion.document_loader  | Successfully loaded 3 document chunks from company_kb.pdf
+2026-05-10 17:11:12 | INFO     | app.ingestion.document_loader  | Loading file: data\product_pricing.csv (type: .csv)
+2026-05-10 17:11:12 | INFO     | app.ingestion.document_loader  | Successfully loaded 11 document chunks from product_pricing.csv
+2026-05-10 17:11:12 | INFO     | app.ingestion.document_loader  | Loading file: data\rag_guide.txt (type: .txt)
+2026-05-10 17:11:12 | INFO     | app.ingestion.document_loader  | Successfully loaded 1 document chunks from rag_guide.txt
+2026-05-10 17:11:12 | INFO     | app.ingestion.document_loader  | Directory load complete. Total documents loaded: 15 from 3 files.
+2026-05-10 17:11:12 | INFO     | app.ingestion.chunker          | Splitting 15 documents into chunks...
+2026-05-10 17:11:12 | INFO     | app.ingestion.chunker          | Chunking complete: 15 docs → 29 chunks
+2026-05-10 17:11:12 | INFO     | app.retrieval.vector_store     | Adding 29 chunks to ChromaDB...
+2026-05-10 17:11:12 | WARNING  | app.embeddings.embedding_manager | OPENAI_API_KEY not set. Falling back to sentence-transformers.
+2026-05-10 17:11:19 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:11:23 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:11:25 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:11:25 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:11:25 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 0 existing embeddings.
+2026-05-10 17:11:26 | INFO     | app.retrieval.vector_store     | Documents added. Total embeddings in store: 29
+2026-05-10 17:11:26 | INFO     | app.utils.pipeline             | Directory ingestion complete: {'files': 3, 'chunks': 29, 'stored': 29}
+2026-05-10 17:11:37 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:11:37 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:11:37 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:11:37 | WARNING  | app.utils.config               | OPENAI_API_KEY is not set but embedding_backend='openai'. Will fall back to sentence-transformers.
+2026-05-10 17:11:37 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:11:37 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:11:37 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:11:37 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:11:37 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 17:11:37 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:11:37 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:11:37 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:11:37 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:11:37 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:11:37 | INFO     | app.agents.rag_agent           | Processing query: 'What is RAG?'
+2026-05-10 17:11:37 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is RAG?'
+2026-05-10 17:11:37 | WARNING  | app.embeddings.embedding_manager | OPENAI_API_KEY not set. Falling back to sentence-transformers.
+2026-05-10 17:11:43 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:11:48 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:11:50 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:11:50 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:11:50 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:11:50 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:11:50 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is RAG?...' → 1 results (threshold=0.3)
+2026-05-10 17:11:50 | INFO     | app.retrieval.retriever        | Retrieved 1 chunks. Top score: 0.363. Sources: ['rag_guide.txt']
+2026-05-10 17:11:50 | WARNING  | app.agents.rag_agent           | No OPENAI_API_KEY — attempting local Ollama LLM fallback.
+2026-05-10 17:11:50 | INFO     | app.agents.rag_agent           | Ollama LLM (llama3) initialized as fallback.
+2026-05-10 17:12:02 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:12:02 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:12:02 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:12:02 | WARNING  | app.utils.config               | OPENAI_API_KEY is not set but embedding_backend='openai'. Will fall back to sentence-transformers.
+2026-05-10 17:12:02 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:12:02 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:12:02 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:12:02 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:12:02 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='openai'
+2026-05-10 17:12:02 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:12:02 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:12:02 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:12:02 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:12:02 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:12:02 | INFO     | app.agents.rag_agent           | Processing query: 'Who is Batman?'
+2026-05-10 17:12:02 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'Who is Batman?'
+2026-05-10 17:12:02 | WARNING  | app.embeddings.embedding_manager | OPENAI_API_KEY not set. Falling back to sentence-transformers.
+2026-05-10 17:12:09 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:12:13 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:12:15 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:12:15 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:12:15 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:12:15 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:12:15 | INFO     | app.retrieval.vector_store     | Similarity search for 'Who is Batman?...' → 0 results (threshold=0.3)
+2026-05-10 17:12:15 | INFO     | app.retrieval.retriever        | No results above threshold. Returning empty RetrievalResult.
+2026-05-10 17:26:01 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:26:01 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:26:01 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:26:01 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:26:01 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:26:01 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:26:01 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:26:01 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:26:01 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:26:01 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:26:01 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:26:01 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:26:01 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:26:10 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:26:15 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:26:17 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:26:17 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:26:17 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:26:17 | INFO     | app.retrieval.vector_store     | Collection 'rag_documents' has been reset.
+2026-05-10 17:26:17 | INFO     | app.memory.memory_manager      | Conversation memory cleared.
+2026-05-10 17:26:17 | INFO     | app.utils.pipeline             | Full pipeline reset complete.
+2026-05-10 17:26:26 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:26:26 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:26:26 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:26:26 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:26:26 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:26:26 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:26:26 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:26:26 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:26:26 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:26:26 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:26:26 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:26:26 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:26:26 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:26:26 | INFO     | app.utils.pipeline             | Ingesting directory: data
+2026-05-10 17:26:26 | INFO     | app.ingestion.document_loader  | Loading file: data\company_kb.pdf (type: .pdf)
+2026-05-10 17:26:26 | INFO     | app.ingestion.document_loader  | Successfully loaded 3 document chunks from company_kb.pdf
+2026-05-10 17:26:26 | INFO     | app.ingestion.document_loader  | Loading file: data\product_pricing.csv (type: .csv)
+2026-05-10 17:26:26 | INFO     | app.ingestion.document_loader  | Successfully loaded 11 document chunks from product_pricing.csv
+2026-05-10 17:26:26 | INFO     | app.ingestion.document_loader  | Loading file: data\rag_guide.txt (type: .txt)
+2026-05-10 17:26:26 | INFO     | app.ingestion.document_loader  | Successfully loaded 1 document chunks from rag_guide.txt
+2026-05-10 17:26:26 | INFO     | app.ingestion.document_loader  | Directory load complete. Total documents loaded: 15 from 3 files.
+2026-05-10 17:26:26 | INFO     | app.ingestion.chunker          | Splitting 15 documents into chunks...
+2026-05-10 17:26:26 | INFO     | app.ingestion.chunker          | Chunking complete: 15 docs → 29 chunks
+2026-05-10 17:26:26 | INFO     | app.retrieval.vector_store     | Adding 29 chunks to ChromaDB...
+2026-05-10 17:26:32 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:26:37 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:26:39 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:26:39 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:26:39 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 0 existing embeddings.
+2026-05-10 17:26:39 | INFO     | app.retrieval.vector_store     | Documents added. Total embeddings in store: 29
+2026-05-10 17:26:39 | INFO     | app.utils.pipeline             | Directory ingestion complete: {'files': 3, 'chunks': 29, 'stored': 29}
+2026-05-10 17:40:10 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:40:10 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:40:10 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:40:10 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:40:10 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:40:10 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:40:10 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:40:10 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:40:10 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:40:10 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:40:10 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:40:10 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:40:10 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:40:17 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:40:23 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:40:25 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:40:25 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:40:25 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:40:25 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionGetEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:42:21 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:42:21 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:42:21 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:42:21 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:42:21 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:42:21 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:42:21 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:42:21 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:42:21 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:42:21 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:42:21 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:42:21 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:42:21 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:42:21 | INFO     | app.agents.rag_agent           | Processing query: 'What is RAG?'
+2026-05-10 17:42:21 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is RAG?'
+2026-05-10 17:42:27 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:42:33 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:42:34 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:42:34 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:42:34 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:42:34 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:42:34 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is RAG?...' → 1 results (threshold=0.3)
+2026-05-10 17:42:34 | INFO     | app.retrieval.retriever        | Retrieved 1 chunks. Top score: 0.363. Sources: ['rag_guide.txt']
+2026-05-10 17:42:34 | WARNING  | app.agents.rag_agent           | No OPENAI_API_KEY — attempting local Ollama LLM fallback.
+2026-05-10 17:42:34 | INFO     | app.agents.rag_agent           | Ollama LLM (llama3) initialized as fallback.
+2026-05-10 17:46:28 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:46:28 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:46:28 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:46:28 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:46:28 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:46:28 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:46:28 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:46:28 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:46:28 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:46:28 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:46:28 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:46:28 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:46:28 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:46:28 | INFO     | app.agents.rag_agent           | Processing query: 'What is RAG?'
+2026-05-10 17:46:28 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is RAG?'
+2026-05-10 17:46:35 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:46:40 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:46:42 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:46:42 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:46:42 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:46:42 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:46:42 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is RAG?...' → 1 results (threshold=0.3)
+2026-05-10 17:46:42 | INFO     | app.retrieval.retriever        | Retrieved 1 chunks. Top score: 0.363. Sources: ['rag_guide.txt']
+2026-05-10 17:46:42 | WARNING  | app.agents.rag_agent           | No OPENAI_API_KEY — attempting local Ollama LLM fallback.
+2026-05-10 17:46:42 | INFO     | app.agents.rag_agent           | Ollama LLM (llama3) initialized as fallback.
+2026-05-10 17:49:23 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:49:23 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:49:23 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:49:23 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:49:23 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:49:23 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:49:23 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:49:23 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:49:23 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:49:23 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:49:23 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:49:23 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:49:23 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:49:23 | INFO     | app.agents.rag_agent           | Processing query: 'What is RAG?'
+2026-05-10 17:49:23 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is RAG?'
+2026-05-10 17:49:29 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:49:34 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:49:36 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:49:36 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:49:36 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:49:36 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:49:36 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is RAG?...' → 1 results (threshold=0.3)
+2026-05-10 17:49:36 | INFO     | app.retrieval.retriever        | Retrieved 1 chunks. Top score: 0.363. Sources: ['rag_guide.txt']
+2026-05-10 17:49:36 | ERROR    | __main__                       | Query error: 'RAGAgent' object has no attribute '_format_chat_history'
+2026-05-10 17:51:11 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:51:11 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:51:11 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:51:11 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:51:11 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:51:11 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:51:11 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:51:11 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:51:11 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:51:11 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:51:11 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:51:11 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:51:11 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:51:11 | INFO     | app.agents.rag_agent           | Processing query: 'What is RAG?'
+2026-05-10 17:51:11 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is RAG?'
+2026-05-10 17:51:17 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:51:23 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:51:25 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:51:25 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:51:25 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:51:25 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:51:25 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is RAG?...' → 1 results (threshold=0.3)
+2026-05-10 17:51:25 | INFO     | app.retrieval.retriever        | Retrieved 1 chunks. Top score: 0.363. Sources: ['rag_guide.txt']
+2026-05-10 17:51:25 | WARNING  | app.agents.rag_agent           | No OPENAI_API_KEY — attempting local Ollama LLM fallback.
+2026-05-10 17:51:25 | INFO     | app.agents.rag_agent           | Ollama LLM (llama3) initialized as fallback.
+2026-05-10 17:52:00 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:52:00 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:52:00 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:52:00 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:52:00 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:52:00 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:52:00 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:52:00 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:52:00 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:52:00 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:52:00 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:52:00 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:52:00 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:52:00 | INFO     | app.agents.rag_agent           | Processing query: 'Who is Batman?'
+2026-05-10 17:52:00 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'Who is Batman?'
+2026-05-10 17:52:06 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:52:11 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:52:12 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:52:12 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:52:12 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:52:12 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:52:12 | INFO     | app.retrieval.vector_store     | Similarity search for 'Who is Batman?...' → 0 results (threshold=0.3)
+2026-05-10 17:52:12 | INFO     | app.retrieval.retriever        | No results above threshold. Returning empty RetrievalResult.
+2026-05-10 17:52:36 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:52:36 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:52:36 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:52:36 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:52:36 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:52:36 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:52:36 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:52:36 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:52:36 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:52:36 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:52:36 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:52:36 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:52:36 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:52:36 | INFO     | app.agents.rag_agent           | Processing query: 'What does CloudAI Pro cost?'
+2026-05-10 17:52:36 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What does CloudAI Pro cost?'
+2026-05-10 17:52:42 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:52:47 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:52:48 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:52:48 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:52:48 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:52:48 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:52:48 | INFO     | app.retrieval.vector_store     | Similarity search for 'What does CloudAI Pro cost?...' → 4 results (threshold=0.3)
+2026-05-10 17:52:48 | INFO     | app.retrieval.retriever        | Retrieved 4 chunks. Top score: 0.491. Sources: ['company_kb.pdf', 'product_pricing.csv']
+2026-05-10 17:52:48 | WARNING  | app.agents.rag_agent           | No OPENAI_API_KEY — attempting local Ollama LLM fallback.
+2026-05-10 17:52:48 | INFO     | app.agents.rag_agent           | Ollama LLM (llama3) initialized as fallback.
+2026-05-10 17:52:56 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:52:56 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:52:56 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:52:56 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:52:56 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:52:56 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:52:56 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:52:56 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:52:56 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:52:56 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:52:56 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:52:56 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:52:56 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:52:56 | INFO     | app.agents.rag_agent           | Processing query: 'What is the refund policy?'
+2026-05-10 17:52:56 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is the refund policy?'
+2026-05-10 17:53:02 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:53:08 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:53:08 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:53:08 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:53:08 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:53:08 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:53:08 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is the refund policy?...' → 0 results (threshold=0.3)
+2026-05-10 17:53:08 | INFO     | app.retrieval.retriever        | No results above threshold. Returning empty RetrievalResult.
+2026-05-10 17:53:11 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 17:53:11 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 17:53:11 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 17:53:11 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 17:53:11 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 17:53:11 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 17:53:11 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 17:53:11 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 17:53:11 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 17:53:11 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 17:53:11 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 17:53:11 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 17:53:11 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 17:53:11 | INFO     | app.agents.rag_agent           | Processing query: 'What is the refund policy?'
+2026-05-10 17:53:11 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is the refund policy?'
+2026-05-10 17:53:16 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 17:53:21 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 17:53:21 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:53:21 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:53:21 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 17:53:21 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 17:53:21 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is the refund policy?...' → 0 results (threshold=0.3)
+2026-05-10 17:53:21 | INFO     | app.retrieval.retriever        | No results above threshold. Returning empty RetrievalResult.
+2026-05-10 18:31:40 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:31:40 | INFO     | __main__                       | Starting Agentic RAG System...
+2026-05-10 18:31:40 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 18:31:40 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 18:31:40 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 18:31:40 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 18:31:40 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 18:31:40 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 18:31:40 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 18:31:40 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 18:31:40 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 18:31:40 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 18:31:40 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 18:31:40 | INFO     | app.agents.rag_agent           | Processing query: 'What are advanced RAG techniques?'
+2026-05-10 18:31:40 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What are advanced RAG techniques?'
+2026-05-10 18:31:46 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 18:31:50 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 18:31:52 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:31:52 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:31:52 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 18:31:52 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:31:52 | INFO     | app.retrieval.vector_store     | Similarity search for 'What are advanced RAG techniques?...' → 1 results (threshold=0.3)
+2026-05-10 18:31:52 | INFO     | app.retrieval.retriever        | Retrieved 1 chunks. Top score: 0.316. Sources: ['rag_guide.txt']
+2026-05-10 18:31:52 | WARNING  | app.agents.rag_agent           | No OPENAI_API_KEY — attempting local Ollama LLM fallback.
+2026-05-10 18:31:52 | INFO     | app.agents.rag_agent           | Ollama LLM (llama3) initialized as fallback.
+2026-05-10 18:36:33 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:36:35 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 18:36:35 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 18:36:35 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 18:36:35 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 18:36:35 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 18:36:35 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 18:36:35 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 18:36:35 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 18:36:35 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 18:36:35 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 18:36:35 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 18:36:41 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 18:36:49 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 18:36:50 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:36:50 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:36:50 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 18:36:50 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionGetEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:40:20 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:40:22 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:40:22 | INFO     | app.agents.rag_agent           | Processing query: 'What is RAG?'
+2026-05-10 18:40:22 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is RAG?'
+2026-05-10 18:40:22 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:40:22 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is RAG?...' → 1 results (threshold=0.3)
+2026-05-10 18:40:22 | INFO     | app.retrieval.retriever        | Retrieved 1 chunks. Top score: 0.363. Sources: ['rag_guide.txt']
+2026-05-10 18:40:22 | WARNING  | app.agents.rag_agent           | No OPENAI_API_KEY — attempting local Ollama LLM fallback.
+2026-05-10 18:40:22 | INFO     | app.agents.rag_agent           | Ollama LLM (llama3) initialized as fallback.
+2026-05-10 18:40:31 | INFO     | __main__                       | Query answered in 8.92s. Grounded: True, Score: 0.36
+2026-05-10 18:40:31 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:45:28 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:45:29 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 18:45:29 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 18:45:29 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 18:45:29 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 18:45:29 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 18:45:29 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 18:45:29 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 18:45:29 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 18:45:29 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 18:45:29 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 18:45:29 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 18:45:35 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 18:45:40 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 18:45:42 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:45:42 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:45:42 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 18:45:42 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionGetEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:46:22 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:46:24 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 18:46:24 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 18:46:24 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 18:46:24 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 18:46:24 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 18:46:24 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 18:46:24 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 18:46:24 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 18:46:24 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 18:46:24 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 18:46:24 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 18:46:29 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 18:46:34 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 18:46:36 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:46:36 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:46:36 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 18:46:36 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionGetEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:53:15 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:53:16 | INFO     | app.utils.config               | .env file loaded.
+2026-05-10 18:53:16 | INFO     | app.utils.config               | Configuration validated successfully.
+2026-05-10 18:53:16 | INFO     | app.utils.pipeline             | Initializing RAG Pipeline components...
+2026-05-10 18:53:16 | INFO     | app.ingestion.document_loader  | DocumentLoader initialized.
+2026-05-10 18:53:16 | INFO     | app.ingestion.chunker          | TextChunker initialized: chunk_size=800, chunk_overlap=150
+2026-05-10 18:53:16 | INFO     | app.embeddings.embedding_manager | EmbeddingManager created with backend='sentence_transformers'
+2026-05-10 18:53:16 | INFO     | app.retrieval.vector_store     | VectorStoreManager initialized. Collection: 'rag_documents', Persist dir: 'vectorstore/chroma_db'
+2026-05-10 18:53:16 | INFO     | app.retrieval.retriever        | RAGRetriever initialized: k=4, score_threshold=0.3
+2026-05-10 18:53:16 | INFO     | app.memory.memory_manager      | MemoryManager initialized with window_size=10
+2026-05-10 18:53:16 | INFO     | app.agents.rag_agent           | RAGAgent initialized. Model: gpt-4o-mini, Mode: agent, Temperature: 0.1
+2026-05-10 18:53:16 | INFO     | app.utils.pipeline             | RAG Pipeline initialized successfully.
+2026-05-10 18:53:21 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-05-10 18:53:28 | INFO     | app.embeddings.embedding_manager | Sentence-Transformers embeddings initialized with model 'all-MiniLM-L6-v2'
+2026-05-10 18:53:30 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:53:30 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:53:30 | INFO     | app.retrieval.vector_store     | ChromaDB loaded. Collection 'rag_documents' has 29 existing embeddings.
+2026-05-10 18:53:30 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionGetEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:53:36 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:53:45 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:53:45 | INFO     | app.agents.rag_agent           | Processing query: 'What is RAG?'
+2026-05-10 18:53:45 | INFO     | app.retrieval.retriever        | Retrieving context for query: 'What is RAG?'
+2026-05-10 18:53:45 | ERROR    | chromadb.telemetry.product.posthog | Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2026-05-10 18:53:45 | INFO     | app.retrieval.vector_store     | Similarity search for 'What is RAG?...' → 1 results (threshold=0.3)
+2026-05-10 18:53:45 | INFO     | app.retrieval.retriever        | Retrieved 1 chunks. Top score: 0.363. Sources: ['rag_guide.txt']
+2026-05-10 18:53:45 | WARNING  | app.agents.rag_agent           | No OPENAI_API_KEY — attempting local Ollama LLM fallback.
+2026-05-10 18:53:45 | INFO     | app.agents.rag_agent           | Ollama LLM (llama3) initialized as fallback.
+2026-05-10 18:53:54 | INFO     | __main__                       | Query completed in 9.44s
+2026-05-10 18:53:54 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:54:21 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled
+2026-05-10 18:54:21 | INFO     | app.memory.memory_manager      | Conversation memory cleared.
+2026-05-10 18:54:21 | INFO     | app.agents.rag_agent           | Agent memory cleared.
+2026-05-10 18:54:21 | INFO     | app.utils.pipeline             | Conversation memory cleared.
+2026-05-10 18:54:21 | INFO     | app.utils.logging_config       | Logging configured. Level=INFO, File=enabled

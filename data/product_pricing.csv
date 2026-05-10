@@ -1,0 +1,12 @@
+product_name,category,price_monthly,price_annual,features,user_limit,storage_gb,support_tier
+CloudAI Starter,AI Platform,500,5400,"10000 API calls, 5 models, basic analytics",10,100,Standard
+CloudAI Pro,AI Platform,2000,21600,"100000 API calls, all models, advanced analytics, custom models",50,1000,Priority
+CloudAI Enterprise,AI Platform,custom,custom,"Unlimited API calls, dedicated infrastructure, SLA, custom integrations",unlimited,unlimited,24/7
+DevBot Free,IDE Plugin,0,0,"500 completions/month, 10 languages",1,0,Community
+DevBot Pro,IDE Plugin,19,190,"Unlimited completions, 40+ languages, AI explanations",1,5,Standard
+DevBot Team,IDE Plugin,15,150,"Unlimited completions, 40+ languages, team analytics",unlimited,20,Standard
+DataPipeline Basic,Data Tools,300,3240,"100 pipelines, 50 connectors, daily sync",5,500,Standard
+DataPipeline Pro,Data Tools,800,8640,"Unlimited pipelines, 200+ connectors, real-time sync",20,2000,Priority
+SupportBot Starter,Chatbot,100,1080,"2000 conversations/month, 1 bot, basic analytics",2,10,Standard
+SupportBot Growth,Chatbot,500,5400,"20000 conversations/month, 5 bots, advanced analytics",10,50,Priority
+SupportBot Enterprise,Chatbot,custom,custom,"Unlimited conversations, white-label, custom integrations",unlimited,unlimited,24/7
